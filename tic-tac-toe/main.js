@@ -15,7 +15,11 @@ const gameboard = (() => {
     }
 
     function translateCoordToIndex(x, y) {
-        return parseInt('' + x + y, 2)
+        return (y * cols) + x
+    }
+
+    const makeAMove = (x, y, value) => {
+        board[translateCoordToIndex(x, y)] = value
     }
 
     return { printBoard }
@@ -23,13 +27,32 @@ const gameboard = (() => {
 
 const gameflow = (() => {
 
+    let currentPlayer = 'X'
+
     const playermove = (x, y) => {
 
     }
 
+    const updateTurn = () => {
+        currentPlayer = (currentPlayer == 'X') ? 'Y' : 'X'
+    }
+
+    const currentTurn = () => {
+        return currentPlayer
+    }
+
+    return { currentTurn, updateTurn }
+
 })()
 
-gameboard.printBoard()
+do {
+    gameboard.printBoard()
+
+    console.log("X go first")
+} while (true);
+
+
+
 
 /* 
 Tic tac toe
@@ -43,6 +66,22 @@ O - player
   20=6  21=7  22=8
 [   ][   ][ X ]
 
+[y][x]
+
+1D Index=(y×3)+x
+1D Index equals open paren y cross Width close paren plus x1D Index=(𝑦×Width)+𝑥
+
+
 X wins!
+
+
+
+
+  00+0=0   01+0=1  02+0=2
+[ X ][   ][ O ]
+ 10+2=3    11+2=4  12+2=5
+[   ][ X ][ O ]
+  20+4=6  21+4=7  22+4=8
+[   ][   ][ X ]
 
  */
