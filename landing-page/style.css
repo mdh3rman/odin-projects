@@ -11,14 +11,46 @@ body {
   background-color: #1f2937;
 }
 
-.header {
+.header-subcontainer {
   width: 900px;
   margin: 0 auto;
   padding-top: 20px;
 }
 
-.logo {
+.header {
+  display: flex;
+}
+
+.header-logo {
   font-weight: bold;
   font-size: 24px;
   color: #f9faf8;
+  width: 50%;
+  flex: 1;
+}
+
+.header-nav {
+  color: #e5e7eb;
+  text-align: right;
+  width: 50%;
+  flex: 1;
+}
+
+.hero-title {
+  width: 50%;
+}
+
+.hero-title h1 {
+  font-size: 48px;
+  font-weight: 900;
+  color: #f9faf8;
+}
+
+.hero-title p {
+  color: #e5e7eb;
+  font-size: 18px;
+}
+
+.hero-image {
+  width: 50%;
 }
